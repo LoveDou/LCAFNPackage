@@ -31,10 +31,7 @@
 {
     self = [super init];
     if (self) {
-        AFSecurityPolicy * securityPolicy = [AFSecurityPolicy defaultPolicy];
-        securityPolicy.allowInvalidCertificates = YES;
-        securityPolicy.validatesDomainName = NO;
-        self.securityPolicy = securityPolicy;
+        self.requestSerializer.timeoutInterval = 10.0f;
     }
     return self;
 }
